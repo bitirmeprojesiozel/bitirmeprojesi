@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= t("master.title") %></title>
+  <%= stylesheet_link_tag "logout_master" %>
+  <%= stylesheet_link_tag "gritter/jquery.gritter.css" %>
+  <%= stylesheet_link_tag "bubblepopup/jquery.bubblepopup.v2.3.1.css" %>
+  <%= stylesheet_link_tag "facebox/facebox.css" %>
+  <%= javascript_include_tag :all %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        <% flash.each do |name, msg| %>
+        gritter('<%= name %>', '<%=t("master.flash.#{name}") %>', '<%= msg %>');
+        <% end %>
+
+
+    });
+
+</script>
+<div id="header">
+  <a href="/">
+    <div id="logo" style="background-image: url('<%= "assets/images/#{t("master.logo")}" %>');">
+    </div>
+  </a>
+
+
+  <div id="login">
+    <%= render "layouts/login" %>
+  </div>
+
+
+</div>
+<div id="content">
+  <%= yield %>
+</div>
+<div id="footer">
+  <div id="footer_info"> <%= t("master.footer_info") %> <%= Time.now.year %> </div>
+</div>
+
+
+</body>
+</html>

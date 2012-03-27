@@ -1,0 +1,33 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+
+  master:
+    title: "Faculty of Medicine Student Affairs Information System"
+    footer_info: "Maltepe University"
+    logo: "master/logo_en.png"
+    login: "Log in"
+    logout: "Log out"
+    user: "User"
+    flash:
+        alert: "Alert"
+        notice: "Notice"
+        error: "Error"
+    session:
+        login: 'Session started'
+        logout: 'Session closed'
+        failure: 'Incorrect username or password'
+        not_authenticated: 'Login to see this page'
+        timeout_text: "Your session is about to time out"
+        continue: "Continue session"
+        end: "End session"
+        dancing_title: "Say goodbye to your session"
+        session_timeout: "Oturumunuz bitiyor"
+        session_timeout_title: "Session timeout"
+        session_timeout_text: "Yeniden giriş yapmak için tıklayın."
+  user_exam:
+    question:
+        error:
+            uninitialized_question: "Son kalınan soru belirsiz"

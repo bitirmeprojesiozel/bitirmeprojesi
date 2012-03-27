@@ -1,0 +1,8 @@
+
+<% if current_user %>
+   <%=t("master.user")%> <%= current_user.login %>
+    <br/>
+    <%= link_to t("master.logout"), logout_path %>
+<% else %>
+    <%= link_to t("master.login"), login_path %>
+<% end %>

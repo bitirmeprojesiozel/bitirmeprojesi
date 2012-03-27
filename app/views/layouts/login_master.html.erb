@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= t("master.title") %></title>
+  <%= stylesheet_link_tag "login_master" %>
+  <%= stylesheet_link_tag "gritter/jquery.gritter.css" %>
+  <%= stylesheet_link_tag "facebox/facebox.css" %>
+  <%= javascript_include_tag :all %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        <% flash.each do |name, msg| %>
+        gritter('<%= name %>', '<%=t("master.flash.#{name}") %>', '<%= msg %>');
+        <% end %>
+
+        timeOutKontrol();
+
+        $(document).bind('afterClose.facebox', function () {
+            timeOutGorunumDurum = false;
+            $.get("<%= edit_user_session_path(1337) %>", function (data) {
+                if (data != null) {
+                    timeOutKontrol();
+                }
+                clearInterval(timeOutSessionInterval);
+                timeOutTitleFix();
+
+            });
+
+        });
+
+    });
+
+
+    var timeOutKontrolInterval = 0;
+    function timeOutKontrol() {
+        $.getJSON("<%= user_sessions_path %>", function (data) {
+            $.each(data, function (key, val) {
+                if (key == "popup_timeout") {
+                    if (val <= 0) {
+                        timeOutTitleChanger();
+                        $.facebox({ ajax:'<%= user_sessions_timeout_path %>' });
+                        timeOutGorunumDurum = true;
+                        $snd.play();
+                    }
+                    else {
+                        var default_timeOut = 3;
+                        if (val > default_timeOut)
+                            default_timeOut = val;
+                        if (timeOutKontrolInterval != 0)
+                            clearTimeout(timeOutKontrolInterval);
+                        timeOutKontrolInterval = setTimeout('timeOutKontrol()', (default_timeOut * 1000));
+                    }
+                }
+            });
+        });
+    }
+
+
+    var timeOutTitle = "<%="#{t("master.session.dancing_title")} "%>";
+    var timeOutTitleEski = $(document).attr('title');
+
+    var timeOutTitleInterval;
+    function timeOutTitleChanger() {
+        timeOutTitleInterval = setInterval(function () {
+            timeOutTitle = timeOutTitle.substring(1, timeOutTitle.length) + timeOutTitle.substring(0, 1);
+            $(document).attr('title', timeOutTitle);
+        }, 800);
+    }
+
+    function timeOutTitleFix() {
+        clearInterval(timeOutTitleInterval);
+        $(document).attr('title', timeOutTitleEski);
+    }
+
+</script>
+<div id="header">
+  <a href="/">
+    <div id="logo" style="background-image: url('<%= "assets/images/#{t("master.logo")}" %>');">
+    </div>
+  </a>
+
+  <div id="login">
+    <%= render "layouts/login" %>
+  </div>
+
+
+</div>
+<div id="content">
+  <%= yield %>
+</div>
+<div id="footer">
+  <div id="footer_info"> <%= t("master.footer_info") %> <%= Time.now.year %> </div>
+</div>
+
+
+</body>
+</html>

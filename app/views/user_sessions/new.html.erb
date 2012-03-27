@@ -1,0 +1,19 @@
+<h1>Log in</h1>
+<script type="text/javascript">
+    $(document).ready(function () {
+        bubble($("#user_session_login"), "KullaniciAdi kardes");
+    })
+
+</script>
+
+<%= form_for @user_session do |form| %>
+    <div class="field">
+      <%= form.label :login %>
+      <%= form.text_field :login %>
+    </div>
+    <div class="field">
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+    </div>
+    <%= form.submit "Log in" %>
+<% end %>

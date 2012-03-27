@@ -1,0 +1,82 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+*/
+body {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    background-color: #E0E0E0;
+}
+
+#header {
+    width: auto;
+    height: 78px;
+    background: url("/assets/images/master/header.png") repeat-x;
+    margin-bottom: 20px;
+}
+
+#logo {
+
+    width: 200px;
+    height: 55px;
+    margin-top: 10px;
+    margin-left: 30px;
+    float: left;
+}
+
+#login {
+    float: right;
+    padding: 8px 12px 2px 12px;
+    margin-top: 48px;
+    margin-right: 40px;
+    background-color: #5B2C7B;
+    height: 20px;
+    border-radius: 14px 14px 0px 0px;
+    color: #ffffff;
+
+}
+
+#login a, a:hover, a:visited {
+    color: #ffffff;
+    background-color: transparent;
+    font-size: 14px;
+    text-decoration: none;
+
+}
+
+#content {
+    min-height: 400px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+    border: #cccccc solid 1px;
+    border-radius: 15px 15px 15px 15px;
+    background-color: #ffffff;
+
+}
+
+#footer {
+    margin-top: 20px;
+    width: auto;
+    height: 25px;
+    background: url("/assets/images/master/footer.png") repeat-x;
+    margin-left: 40px;
+    margin-right: 40px;
+    border: #cccccc solid 1px;
+    border-radius: 10px 10px 10px 10px;
+
+}
+
+#footer_info {
+    color: #333;
+    float: right;
+    margin-right: 20px;
+    margin-top: 3px;
+
+}

@@ -1,0 +1,7 @@
+ruby:
+  version: 1.9
+#stomp:
+#  stomplets:
+#    stomp_test:
+#      class: StompTestStomplet
+#      route: /stomp_test

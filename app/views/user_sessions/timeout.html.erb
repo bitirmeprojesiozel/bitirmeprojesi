@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+      #timeout_body {
+          margin: 0 0 0 0;
+          padding: 0 0 0 0;
+          font-family: verdana, arial, helvetica, sans-serif;
+          font-weight: normal;
+          font-style: normal;
+          background-color: #E0E0E0;
+      }
+
+      #timeout_content {
+          min-height: 70px;
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-bottom: 20px;
+          margin-left: 20px;
+          margin-top: 20px;
+          margin-right: 20px;
+          border: #cccccc solid 1px;
+          border-radius: 15px 15px 15px 15px;
+          background-color: #ffffff;
+
+      }
+
+      .buton {
+          background: url("/assets/master/header.png") repeat-x;
+          border-radius: 10px 10px 10px 10px;
+          color: #ffffff;
+          font-size: 12px;
+          height: 30px;
+          border-width: 0;
+
+      }
+
+      .buton:hover {
+          background-color: #9E42DD;
+          background-image: none;
+      }
+
+      #time_out_metin {
+          margin-top: 20px;
+          margin-bottom: 20px;
+
+      }
+
+  </style>
+</head>
+
+<body id="timeout_body">
+<script type="text/javascript">
+    var timeOutSessionInterval;
+    var timeOutGorunumDurum;
+    $(document).ready(function () {
+
+        var timeOutSessionTime;
+        var timeOutSessionInterval;
+
+        $.getJSON("<%= user_sessions_path %>", function (data) {
+            $.each(data, function (key, val) {
+                if (key == "session_timeout") {
+                    timeOutSessionTime = parseInt(val);
+                }
+            })
+        });
+
+        $("#timeout_continue").click(function(){
+            $(document).trigger('close.facebox');
+
+        });
+
+        $("#timeout_end").click(function(){
+                window.location="<%=logout_path%>";
+
+              });
+        timeOutSessionInterval = setInterval(function () {
+            $("#timeOutSayac").html(timeOutSessionTime);
+            timeOutSessionTime--;
+
+            if (timeOutSessionTime <= 0) {
+                clearInterval(timeOutSessionInterval);
+                setTimeout(function () {
+                    $.get("<%= user_sessions_path %>", function (data) {
+                        if (data == null) {
+                            gritter('timeout', '<%=t("master.session.session_timeout_title")%>', '<%=t("master.session.session_timeout_text")%>'+'<br/><a href="<%=login_path%>"><%=t("master.login")%></a>');
+                        }
+                    });
+                    if (timeOutGorunumDurum == true) {
+                        $(document).trigger('close.facebox');
+                        timeOutGorunumDurum = false;
+                    }
+                }, 2000);
+
+
+            }
+
+        }, 1000);
+
+    });
+
+
+</script>
+
+<div id="timeout_content">
+  <div id="time_out_metin"><%= t("master.session.timeout_text") %> <span id="timeOutSayac"></span></div>
+  <div style="float: left;">
+    <input type="button" id="timeout_continue" value="<%= t("master.session.continue") %>" class="buton"></div>
+  <div style="float: right;"><input type="button" id="timeout_end" value="<%= t("master.session.end") %>" class="buton">
+  </div>
+  <div style="clear: both;"></div>
+</div>
+
+
+</body>
+
+</html>

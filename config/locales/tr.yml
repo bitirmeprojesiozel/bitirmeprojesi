@@ -1,0 +1,33 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+tr:
+  hello: "Selamün Aleyküm Gardaş"
+
+  master:
+    title: "2012 Ön Eleme Sınav Sistemi"
+    footer_info: "Maltepe Üniversitesi"
+    logo: "master/logo_tr.png"
+    login: "Giriş"
+    logout: "Çıkış"
+    user: "Kullanıcı"
+    flash:
+        alert: "Uyarı"
+        notice: "Bilgi"
+        error: "Hata"
+    session:
+        login: 'Oturumunuz başlatıldı'
+        logout: 'Oturumunuz sonlandırıldı'
+        failure: 'Yanlış kullanıcı adı ya da şifre'
+        not_authenticated: 'Bu sayfaya erişmek için giriş yapmak gerekir'
+        timeout_text: "Uzun süre hiç bir işlem yapmadınız, oturumunuzu sizin için sonlandırıyoruz."
+        continue: "Oturumu sürdür"
+        end: "Oturumu sonlandır"
+        dancing_title: "Oturumunuz bitiyor"
+        session_timeout_title: "Oturumunuz düştü"
+        session_timeout_text: "Yeniden giriş yapmak için tıklayın."
+  user_exam:
+    question:
+        error:
+            uninitialized_question: "Son kalınan soru belirsiz"
+    finish: "Ön eleme sorularını tamamladınız."

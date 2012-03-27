@@ -1,0 +1,30 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+<script type="text/javascript">
+
+    var lobiIntervarlID;
+
+    $(document).ready(function () {
+        lobiIntervarlID= setInterval(function () {
+
+            $.getJSON("<%=user_exam_exam_timeout_path%>", function (data) {
+               if(data["exam_timeout"]<=0){
+
+                   window.location="<%=user_exam_question_path%>";
+
+
+               }
+
+
+            });
+        }, 1000);
+
+
+    });
+
+</script>
+<h1>
+
+
+</h1>
+

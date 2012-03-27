@@ -1,0 +1,93 @@
+tr:
+  activerecord:
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages: 
+        accepted: "kabul edilmelidir"
+        blank: "boş bırakılamaz"
+        confirmation: "teyit için girilen değerle uyuşmuyor"
+        empty: "boş bırakılamaz"
+        equal_to: "%{count} olmalı"
+        even: "çift olmalı"
+        exclusion: "ayrılmış"
+        greater_than: "%{count} den/dan büyük olmalı"
+        greater_than_or_equal_to: "%{count} sayısından büyük veya eşit olmalı"
+        inclusion: "listeye dahil değil"
+        invalid: "geçersiz"
+        less_than: "%{count} sayısından küçük olmalı"
+        less_than_or_equal_to: "%{count} sayısından küçük veya eşit olmalı"
+        not_a_number: "sayı değil"
+        odd: "tek olmalı"
+        record_invalid: "Doğrulama başarısız oldu: %{errors}"
+        taken: "önceden alınmış"
+        too_long: "çok uzun. (maksimum %{count} karakter olabilir)"
+        too_short: "çok kısa (minimum %{count} karakter olabilir)"
+        wrong_length: "yanlış uzunluk (%{count} karakter olmalı)"
+      models: 
+        comment: 
+          attributes: 
+            body: 
+              no_body_generic: "Yukarıdaki kutuya yaptıklarınızı yazın."
+              no_body_task: "Yukarıdaki kutuya bu görev ile ilgili yaptıklarınızı yazın."
+        conversation: 
+          attributes: 
+            body: 
+              no_body_generic: "Sohbeti başlatmak için bir yorum yazın."
+            name: 
+              no_title: "Bu sohbete bir başlık verin."
+      template: 
+        body: "Aşağıdaki alanlarla ilgili sorunlar oluştu:"
+        header: 
+          one: "1 hata sebebiyle bu %{model} kaydedilemedi"
+          other: "%{count} hata sebebiyle bu %{model} kaydedilemedi"
+    attributes:
+      user:
+        email: "E-Posta"
+        gsm: "Cep Telefonu"
+        sex: "Cinsiyet"
+        active: "Aktif"
+        passive: "Pasif"
+        role: "Rolü"
+        name: "Adı"
+        surname: "Soyadı"
+        password: "Şifre"
+        password_confirmation: "Şifre Doğrulama"
+        current_password: "Güncel Şifre"
+        password: "Yeni Şifre"
+        confirm_password: "Şifreyi Doğrula"
+        sign_in_count: "Sisteme giriş sayısı"
+        current_sign_in_at: "Şu Anki Oturumu Açma Tarihi"
+        last_sign_in_at: "Son Oturumu Açma Tarihi"
+      supervisor:
+        title: "Ünvanı"
+      parent:
+        occupation_type: "Mesleği"
+        alive: "Hayatta"
+      student_counselor_parent:
+        guardian: "Velisi"
+        parental_relation_type: "Yakınlık Derecesi"
+      director:
+        title: "Ünvanı"
+      student:
+        grade: "Sınıfı"
+        tax_id: "T.C. Kimlik"
+        parents_divorced: "Anne Baba Ayrı"
+        birth_date: "Doğum Tarihi"
+        secondary_school_id: "Lise"
+        class_name: "Şubesi"
+        curriculum_program_types: "Program Türleri"
+      student_counselor:
+        institution_number: "Kurum No."
+      counselor_study_program_detail:
+        number_of_additional_questions: "Ek Soru Sayısı"
+      institution:
+        activity_start_date: "Üyelik Başlangıç Tarihi"
+        institution_activity_start_date: "Üyelik Başlangıç Tarihi"
+        start_date: "Çalışma Programı Başlangıç Tarihi"
+        end_date: "Çalışma Programı Bitiş Tarihi"
+        institution_activity_state: "Üyelik Tipi"
+        institution_type_id: "Kurum Tipi"
+        name: "Kurum Adı"
+        address: "Kurum Adresi"
+

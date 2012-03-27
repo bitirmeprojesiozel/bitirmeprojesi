@@ -1,0 +1,6 @@
+tr:
+  helpers:
+    submit:
+      update: "Güncelle"
+      create: "Oluştur"
+

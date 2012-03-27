@@ -1,0 +1,11 @@
+common: &common
+    session_timeout:
+        session_wait: 300
+        popup_wait: 60
+
+development:
+    <<: *common
+test:
+    <<: *common
+production:
+    <<: *common
