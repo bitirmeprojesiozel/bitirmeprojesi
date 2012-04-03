@@ -4,6 +4,10 @@ class CommentsController < ApplicationController
   def index
     @comments = Comment.all
 
+
+
+
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @comments }
@@ -80,4 +84,9 @@ class CommentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def Typing
+    render "index"
+  end
+
 end

@@ -1,14 +1,34 @@
 <h1>Comments</h1>
 
 
+    <%= select("post", "type_id", [["All", 0]] + Type.all.collect {|p| [ p.name, p.id ] }) %>
+
+
+<%= collection_select :Job, :type_id, Type.find(:all), :id, :name %>
+<%= @Job %>
+
+
+
     <div class="comments" style="margin-top: 50px;">
+
 <% @comments.reverse.each do |f| %>
-    <div class="comment" style="border: #999999 outset medium; margin-left: 300px;">
+           <% TakenLecture.all.each do |t| %>
+           <% if t.user_id==1 and t.tag_id==f.tag_id  %>
+
+
+          <div class="comment" style="border: #999999 outset medium; margin-left: 300px;">
       <div class="comment_item"><h4><%= User.find(f.user_id).name %></h4></div>
       <div class="comment_item"><%= Tag.find(f.tag_id).name+ "-" +Type.find(f.type_id).name %></div>
       <div class="comment_item"><%= f.created_at %></div>
       <div class="comment_item"><%= f.comment %></div>
     </div>
 
+
+          <% end %>
+
+
+
+
 <% end %>
+      <% end %>
 </div>
