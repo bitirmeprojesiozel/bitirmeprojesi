@@ -1,0 +1,14 @@
+<h1>Comments</h1>
+
+
+    <div class="comments" style="margin-top: 50px;">
+<% @comments.reverse.each do |f| %>
+    <div class="comment" style="border: #999999 outset medium; margin-left: 300px;">
+      <div class="comment_item"><h4><%= User.find(f.user_id).name %></h4></div>
+      <div class="comment_item"><%= Tag.find(f.tag_id).name+ "-" +Type.find(f.type_id).name %></div>
+      <div class="comment_item"><%= f.created_at %></div>
+      <div class="comment_item"><%= f.comment %></div>
+    </div>
+
+<% end %>
+</div>

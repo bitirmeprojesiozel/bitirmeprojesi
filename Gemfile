@@ -12,6 +12,7 @@ platform :jruby do
   gem 'activerecord-jdbc-adapter'
   gem 'jdbc-sqlite3'
   #gem 'jdbc-mysql'
+
 end
 
 gem 'authlogic'
