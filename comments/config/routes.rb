@@ -1,9 +1,17 @@
 Comments::Application.routes.draw do
+  resources :authentications
+
+  devise_for :users, :controller => {:registrations => 'registrations'}, :path_names => { :sign_up => "register" }
+
   resources :users
 
   resources :microposts
 
   resources :comments
+
+  match '/auth/:provider/callback' => 'authentications#create'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -54,7 +62,9 @@ Comments::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'comments#index'
+
+
 
   # See how all your routes lay out with "rake routes"
 
