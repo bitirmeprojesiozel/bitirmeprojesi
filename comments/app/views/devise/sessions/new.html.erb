@@ -1,20 +1,26 @@
-<h2>Sign in</h2>
+<div id="dis" style="text-align: center;">
+<div align="center" id="div_login">
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  <div><%= f.label 'E-Posta' %><br />
+  <%= f.email_field :email, :placeholder => "e-posta" %></div>
 
 
 <% if @user.password_required? %>
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <div><%= f.label 'Şifre' %><br />
+  <%= f.password_field :password, :placeholder => "şifre" %></div>
 <% end %>
 
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <div><%= f.check_box :remember_me %> <%= f.label 'Oturumumu açık tut' %></div>
   <% end -%>
 
-  <div><%= f.submit "Sign in" %></div>
+  <div id='buttons'><%= f.submit "Giriş yap" %></div>
 <% end %>
 
+
 <%= render "links" %>
+
+</div>
+<div id='biz'>Bu site Barış YILDIRIM ve Mustafa OTAĞ tarafından yapılmıştır.</div>
+</div>

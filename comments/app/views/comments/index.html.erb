@@ -1,6 +1,4 @@
-<h1>Comments</h1>
-
-
+<div id="dis">
 <%= select("post", "type_id", [["All", 0]] + Type.all.collect {|p| [ p.name, p.id ] }) %>
 
 
@@ -9,18 +7,28 @@
 
 
 
-<div class="comments" style="margin-top: 50px;">
+<div id="page">
+
+
+<div id="left_side">
+asfd
+
+
+
+
+</div>
+
 
   <% @comments.reverse.each do |f| %>
       <% TakenLecture.all.each do |t| %>
           <% if t.user_id==current_user.id and t.tag_id==f.tag_id  %>
 
 
-              <div class="comment" style="border: #999999 outset medium; margin-left: 300px;">
-                <div class="comment_item"><h4><%= User.find(f.user_id).name %></h4></div>
-                <div class="comment_item"><%= Tag.find(f.tag_id).name+ "-" +Type.find(f.type_id).name %></div>
-                <div class="comment_item"><%= f.created_at %></div>
-                <div class="comment_item"><%= f.comment %></div>
+              <div id="comment"><div id="comments_header"></div>
+                <div id="comment_item"><h4><%= User.find(f.user_id).name %></h4></div>
+                <div id="comment_item"><%= Tag.find(f.tag_id).name+ "-" +Type.find(f.type_id).name %></div>
+                <div id="comment_item"><%= f.created_at %></div>
+                <div id="comment_item"><%= f.comment %></div>
               </div>
 
 
@@ -32,3 +40,5 @@
       <% end %>
   <% end %>
 </div>
+
+    </div>
