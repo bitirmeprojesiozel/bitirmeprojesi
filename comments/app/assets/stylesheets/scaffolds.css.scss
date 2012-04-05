@@ -69,16 +69,16 @@ div {
     list-style: square; } }
 
 
-#div_login {
-    height:300px;
+#login_page {
+    height:400px;
     background-color:#7c99a3;
     border-radius:60px;
     font-size:14px;
     text-align:left;
-    padding-top:80px;
-    padding-left:250px;
-    margin-left:100px;
-    margin-right:100px;
+    padding-top:50px;
+    padding-left:120px;
+    margin-left:150px;
+    margin-right:150px;
     margin-top:100px;
 
 }
@@ -100,7 +100,7 @@ div {
     margin-bottom:3px;
     font-size:8px;
 }
-#dis {
+#container {
     margin: 0 auto;
     padding: 0;
     width:1000px;
@@ -133,4 +133,90 @@ div {
 
 #left_side {
     width:290px;
+}
+
+#ic {
+    background-color: #D8D8D8;
+    width:350px;
+    height:320px;
+    border-radius:10px;
+    margin-left:40px;
+    padding-left:20px;
+    padding-top:30px;
+
+
+}
+#ic_header {
+    margin-left:-20px;
+    margin-top:-30px;
+    margin-bottom: 20px;
+    border: #909090 outset 2px;
+    background-color: #909090;
+    font-color: #708090;
+    text-align: center;
+    font-weight: bold;
+    border-radius:5px;
+}
+
+.authentications {
+  margin-bottom: 30px;
+}
+
+.authentication {
+  width: 130px;
+  float: left;
+  background-color: #EEE;
+  border: solid 1px #999;
+  padding: 5px 10px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.authentication .remove {
+  text-decoration: none;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  color: #333;
+  padding: 2px 4px;
+  font-size: 10px;
+}
+
+.authentication .remove:hover {
+  color: #CCC;
+  background-color: #777;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+
+.authentication img {
+  float: left;
+  margin-right: 10px;
+}
+
+.authentication .provider {
+  font-weight: bold;
+}
+
+.authentication .uid {
+  color: #666;
+  font-size: 11px;
+}
+
+.auth_provider img {
+  display: block;
+}
+
+.auth_provider {
+  float: left;
+  text-decoration: none;
+  margin-right: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#enter_button {
+
 }

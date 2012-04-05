@@ -2,9 +2,9 @@
   <%= link_to "Giriş yap", new_session_path(resource_name) %><br />
 <% end -%>
 
-<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Kayıt ol", new_registration_path(resource_name) %><br />
-<% end -%>
+<%#- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <%#= link_to "Kayıt ol", new_registration_path(resource_name) %><br />
+<%# end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
   <%= link_to "Şifremi unuttum", new_password_path(resource_name) %><br />
