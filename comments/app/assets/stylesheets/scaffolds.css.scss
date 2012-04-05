@@ -32,8 +32,8 @@ a {
   &:visited {
     color: #666; }
   &:hover {
-    color: #fff;
-    background-color: #000; } }
+    color: #000;
+    background-color: #7c99a3; } }
 
 div {
   &.field, &.actions {
@@ -100,7 +100,7 @@ div {
     margin-bottom:3px;
     font-size:8px;
 }
-#container {
+#containers {
     margin: 0 auto;
     padding: 0;
     width:1000px;
@@ -113,17 +113,40 @@ div {
 
 #comments_header {
     background-color:#909090;
-    width:690px;
+    width:575px;
     height:25px;
     border-radius:6px;
+    font-size:15px;
+    font-weight:bold;
+    padding-left:15px;
+    padding-top:3px;
+    margin-left: -1px;
 
 }
 
-#comment {
+#right_side {
     background-color:#e2e2e2;
-    border: #999999 outset 2px;
-    width:690px;
+    border: #fff solid 2px;
+    width:590px;
     border-radius:6px;
+    position:absolute;
+    right:250px;
+    min-height:250px;
+
+}
+
+#left_side {
+    background-color:#e2e2e2;
+    border: #fff solid 2px;
+    width:190px;
+    border-radius:6px;
+    position:absolute;
+    left:250px;
+    min-height:250px;
+}
+
+#for_comment {
+
 
 }
 
@@ -131,11 +154,9 @@ div {
 
 }
 
-#left_side {
-    width:290px;
-}
 
-#ic {
+
+#login_page_inside {
     background-color: #D8D8D8;
     width:350px;
     height:320px;
@@ -146,7 +167,8 @@ div {
 
 
 }
-#ic_header {
+#login_page_inside_header {
+    height:30px;
     margin-left:-20px;
     margin-top:-30px;
     margin-bottom: 20px;
@@ -156,6 +178,8 @@ div {
     text-align: center;
     font-weight: bold;
     border-radius:5px;
+    font-size:18px;
+    padding-top:8px;
 }
 
 .authentications {
@@ -217,6 +241,33 @@ div {
   margin-bottom: 10px;
 }
 
-#enter_button {
+#container {
+    background-color:#7c99a3;
+    border-radius:60px;
+    font-size:14px;
+    text-align:left;
+    padding-top:50px;
+    padding-left:120px;
+    padding-bottom:50px;
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:100px;
+    min-height:400px;
 
+
+}
+
+#container_header {
+    height:40px;
+    margin-left:-120px;
+    margin-top:-50px;
+    margin-bottom: 20px;
+    border: #909090 outset 2px;
+    background-color: #909090;
+    font-color: #708090;
+    text-align: center;
+    font-weight: bold;
+    border-radius:50px 50px 0px 0px;
+    font-size:25px;
+    padding-top:12px;
 }

@@ -1,44 +1,46 @@
-<div id="dis">
-<%= select("post", "type_id", [["All", 0]] + Type.all.collect {|p| [ p.name, p.id ] }) %>
+
+<div id="container"><div id="container_header">Duyurular</div>
+  <%= select("post", "type_id", [["All", 0]] + Type.all.collect {|p| [ p.name, p.id ] }) %>
 
 
-<%= collection_select :Job, :type_id, Type.find(:all), :id, :name, {}, {:onchange => "alert('hamdi')"} %>
-<%= @Job %>
-
-
-
-<div id="page">
-
-
-<div id="left_side">
-asfd
+  <%= collection_select :Job, :type_id, Type.find(:all), :id, :name, {}, {:onchange => "alert('hamdi')"} %>
+  <%= @Job %>
 
 
 
-
-</div>
-
-
-  <% @comments.reverse.each do |f| %>
-      <% TakenLecture.all.each do |t| %>
-          <% if t.user_id==current_user.id and t.tag_id==f.tag_id  %>
+  <div id="page">
 
 
-              <div id="comment"><div id="comments_header"></div>
-                <div id="comment_item"><h4><%= User.find(f.user_id).name %></h4></div>
-                <div id="comment_item"><%= Tag.find(f.tag_id).name+ "-" +Type.find(f.type_id).name %></div>
-                <div id="comment_item"><%= f.created_at %></div>
-                <div id="comment_item"><%= f.comment %></div>
-              </div>
+    <div id="left_side">
+      asfd
+
+
+
+
+    </div>
+
+    <div id="right_side">
+
+      <% @comments.reverse.each do |f| %>
+          <% TakenLecture.all.each do |t| %>
+              <% if t.user_id==current_user.id and t.tag_id==f.tag_id  %>
+
+
+                  <div id="for_comment"><div id="comments_header"><%= User.find(f.user_id).name %></div>
+                    <div id="comment_item"><%= Tag.find(f.tag_id).name+ "-" +Type.find(f.type_id).name %></div>
+                    <div id="comment_item"><%= f.created_at %></div>
+                    <div id="comment_item"><%= f.comment %></div>
+                  </div>
+                  <br>
+
+
+              <% end %>
+
+
 
 
           <% end %>
-
-
-
-
       <% end %>
-  <% end %>
-</div>
-
     </div>
+  </div>
+</div>
