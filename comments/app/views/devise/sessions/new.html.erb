@@ -2,6 +2,9 @@
   <div id="login_page_inside"><div id="login_page_inside_header">Giriş</div>
 
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+
+
         <div><%= f.label 'E-Posta' %><br />
           <%= f.email_field :email, :placeholder => "e-posta" %></div>
 

@@ -10,7 +10,9 @@
 <div id="containers" style="text-align: center;">
 <div id="user_nav">
   <% if user_signed_in? %>
-    Sisteme, <%= current_user.email %> adresiyle giriş yapılmıştır.
+      <% a=current_user.name %>
+
+    Sisteme hoşgeldiniz, <%= a.split.each { |x| print x.capitalize!, " "}.join(" ") %>.
     <%= link_to "Çıkış yap", destroy_user_session_path, :method => :delete %>
     <%= link_to "Ayarlar", authentications_path %>
   <% else %>

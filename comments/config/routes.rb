@@ -11,6 +11,10 @@ Comments::Application.routes.draw do
 
   match '/auth/:provider/callback' => 'authentications#create'
 
+  #get 'comments/filter'
+
+ # match 'comments/filter' => 'comments#filter'
+  post "filter"=> "comments#filter", :as=> "filter"
 
 
   # The priority is based upon order of creation:

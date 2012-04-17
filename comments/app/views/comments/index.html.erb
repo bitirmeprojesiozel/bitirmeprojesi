@@ -1,46 +1,64 @@
 
 <div id="container"><div id="container_header">Duyurular</div>
-  <%= select("post", "type_id", [["All", 0]] + Type.all.collect {|p| [ p.name, p.id ] }) %>
-
-
-  <%= collection_select :Job, :type_id, Type.find(:all), :id, :name, {}, {:onchange => "alert('hamdi')"} %>
-  <%= @Job %>
+  <% a=current_user.name %>
+  <%= link_to a.split.each { |x| print x.capitalize!, " "}.join(" "), authentications_path %>
 
 
 
-  <div id="page">
-
-
-    <div id="left_side">
-      asfd
-
+  <table>
+    <tr >
+      <td>
+        <div id="page">
 
 
 
-    </div>
-
-    <div id="right_side">
-
-      <% @comments.reverse.each do |f| %>
-          <% TakenLecture.all.each do |t| %>
-              <% if t.user_id==current_user.id and t.tag_id==f.tag_id  %>
-
-
-                  <div id="for_comment"><div id="comments_header"><%= User.find(f.user_id).name %></div>
-                    <div id="comment_item"><%= Tag.find(f.tag_id).name+ "-" +Type.find(f.type_id).name %></div>
-                    <div id="comment_item"><%= f.created_at %></div>
-                    <div id="comment_item"><%= f.comment %></div>
-                  </div>
-                  <br>
-
-
-              <% end %>
+          <div id="left_side">
 
 
 
 
-          <% end %>
-      <% end %>
-    </div>
-  </div>
+            <%= form_tag(filter_path) do |f| %>
+            <%= select_tag(:type_id ,options_for_select(["Seçiniz"])+options_from_collection_for_select(Type.find(:all), "id", "name"),{:onchange => "this.form.submit();"} ) %>
+        <% end %>
+
+
+
+          </div>
+
+
+
+          <div id="right_side">
+
+            <% @comments.reverse.each do |f| %>
+                <% TakenLecture.all.each do |t| %>
+                    <% if t.user_id==current_user.id and t.tag_id==f.tag_id  %>
+
+                        <% a=User.find(f.user_id).name %>
+                        <div id="for_comment"><div id="comments_header"><%= a.split.each { |x| print x.capitalize!, " "}.join(" ") %></div>
+                          <div id="comment_item"><%= Tag.find(f.tag_id).name+ "-" +Type.find(f.type_id).name %></div>
+                          <div id="comment_item"><%= f.created_at %></div>
+                          <div id="comment_item"><%= f.comment %></div>
+                        </div>
+                        </br>
+
+
+                    <% end %>
+
+
+
+
+                <% end %>
+            <% end %>
+
+
+
+
+          </div>
+
+
+
+        </div>
+      </td>
+    </tr>
+  </table>
 </div>

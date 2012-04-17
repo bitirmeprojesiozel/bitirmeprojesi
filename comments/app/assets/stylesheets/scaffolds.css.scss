@@ -107,48 +107,80 @@ div {
 }
 
 #page {
+    min-height:250px;
     margin-top: 50px;
+
+
+}
+#page table {
+    margin-left: -50px;
+    min-height: 250px;
 
 }
 
+#page td {
+
+    margin-right:200px;
+    min-height:250px;
+}
+
+
+
 #comments_header {
     background-color:#909090;
-    width:575px;
+    width:577px;
     height:25px;
-    border-radius:6px;
+    border-radius:6px 6px 0px 0px;
     font-size:15px;
     font-weight:bold;
     padding-left:15px;
     padding-top:3px;
-    margin-left: -1px;
+    margin-left: -6px;
+    margin-top: -2px;
 
 }
 
 #right_side {
-    background-color:#e2e2e2;
-    border: #fff solid 2px;
+    //background-color:#e2e2e2;
+    //border: #909090 solid 2px;
     width:590px;
     border-radius:6px;
-    position:absolute;
-    right:250px;
+    //position:absolute;
+    //right:250px;
     min-height:250px;
+    margin-left:190px;
 
+
+}
+#right_side br{
+display: block;
+margin-bottom: 6px;
 }
 
 #left_side {
     background-color:#e2e2e2;
-    border: #fff solid 2px;
-    width:190px;
+    border: #909090 solid 2px;
+    width:220px;
     border-radius:6px;
     position:absolute;
-    left:250px;
+    left:220px;
+    text-align: top;
     min-height:250px;
+    padding-top: 10px;
+    padding-left: 6px;
 }
 
 #for_comment {
-
-
+   background-color:#e2e2e2;
+   //border: #fff solid 2px;
+   border-radius: 6px;
+   padding-left: 5px;
+   padding-bottom: 2px;
+   padding-top: 2px;
+   padding-right: 5px;
 }
+
+
 
 #comment_item {
 
@@ -255,6 +287,7 @@ div {
     min-height:400px;
 
 
+
 }
 
 #container_header {
@@ -270,4 +303,27 @@ div {
     border-radius:50px 50px 0px 0px;
     font-size:25px;
     padding-top:12px;
+}
+
+#options_right{
+
+background-color:#e2e2e2;
+    border: #909090 solid 2px;
+    width:590px;
+    border-radius:6px;
+    position:absolute;
+    right:250px;
+    min-height:250px;
+    padding-left:100px;
+
+
+}
+
+#paginate{
+
+    position:absolute;
+    right:250px;
+    padding-left:100px;
+
+
 }

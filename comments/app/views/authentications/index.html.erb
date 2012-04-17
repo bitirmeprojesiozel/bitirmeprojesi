@@ -2,7 +2,7 @@
   <div id="container_header">Ayarlar</div>
 
 
-  <div id="right_side">
+  <div id="options_right">
 <% if @authentications %>
   <% unless @authentications.empty? %>
     <p><strong>You can sign in to this account using:</strong></p>
@@ -57,3 +57,4 @@
 
     </div>
 
+ <%= link_to "Geri", comments_path %>

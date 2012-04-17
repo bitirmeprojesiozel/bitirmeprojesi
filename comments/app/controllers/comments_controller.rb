@@ -4,9 +4,9 @@ class CommentsController < ApplicationController
 
   before_filter :authenticate_user!
   def index
-    @comments = Comment.all
-
-
+    @messages = Type.all
+       @comments = Comment.all
+     # @comments = Comment.paginate :per_page => 5, :page => params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
@@ -85,8 +85,11 @@ class CommentsController < ApplicationController
     end
   end
 
-  def Typing
-    render "index"
+  def filter
+     type_id= params[:type_id]
+    @comments= Comment.find_all_by_type_id(type_id)
+
+    render :action=> :index
   end
 
 end
