@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120404203228) do
+ActiveRecord::Schema.define(:version => 20120417121604) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20120404203228) do
   end
 
   create_table "comments", :force => true do |t|
-    t.string   "comment"
+    t.string   "message"
     t.integer  "user_id"
     t.integer  "type_id"
     t.integer  "tag_id"

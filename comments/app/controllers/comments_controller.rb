@@ -17,7 +17,9 @@ class CommentsController < ApplicationController
   # GET /comments/1
   # GET /comments/1.json
   def show
-    @comment = Comment.find(params[:id])
+
+
+    @comment = Comment.find
 
     respond_to do |format|
       format.html # show.html.erb
@@ -44,7 +46,12 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(params[:comment])
+    @comment = Comment.new
+    @comment.message = params[:message]
+    @comment.tag_id = params[:tag_id]
+    @comment.type_id = params[:type_id]
+    @comment.user_id=current_user.id
+
 
     respond_to do |format|
       if @comment.save
@@ -90,6 +97,15 @@ class CommentsController < ApplicationController
     @comments= Comment.find_all_by_type_id(type_id)
 
     render :action=> :index
+  end
+
+  def myPage
+  @comments = Comment.find_all_by_user_id(current_user.id)
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => @comment }
+    end
   end
 
 end

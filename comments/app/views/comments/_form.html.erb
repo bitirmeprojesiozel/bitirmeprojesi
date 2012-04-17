@@ -11,7 +11,44 @@
     </div>
   <% end %>
 
+
+    <table>
+
+ <tr>
+<td>
+<%=	'İçerik Giriniz:' %>
+  </td><td>
+<%= text_area_tag 'message', nil, :size => '100x20'  %> </td></tr>
+                            <tr>
+<td>
+<%=	'Ders Seçiniz:' %>
+  </td><td>
+
+                                   <% b=Array.new %>
+                              <% if TakenLecture.find_all_by_user_id(current_user.id).count == 1  %>
+                                  <% b= TakenLecture.find_by_user_id(current_user.id).tag_id %>
+
+                                        <% else %>
+                                    <% TakenLecture.find_all_by_user_id(current_user.id).each do |a| %>
+
+                                  <% b << a %>
+                                               <% end %>
+                                    <% end %>
+ <%= select_tag(:tag_id ,options_from_collection_for_select(Tag.where(:id => b), "id", "name"))%> </td></tr>
+      <tr>
+  <td>
+  <%=	'Etiket Seçiniz:' %>
+</td><td>
+
+  <%= select_tag(:type_id ,options_from_collection_for_select(Type.find(:all), "id", "name"))  %> </td></tr>
+
+     </table>
+
+
+
+
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Oluştur" %>
   </div>
 <% end %>

@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Comments</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+<title>Comments</title>
+<%= stylesheet_link_tag "application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
 </head>
 <body>
-<div id="containers" style="text-align: center;">
-<div id="user_nav">
-  <% if user_signed_in? %>
-      <% a=current_user.name %>
 
-    Sisteme hoşgeldiniz, <%= a.split.each { |x| print x.capitalize!, " "}.join(" ") %>.
-    <%= link_to "Çıkış yap", destroy_user_session_path, :method => :delete %>
-    <%= link_to "Ayarlar", authentications_path %>
-  <% else %>
-    <%= link_to "Kayıt ol", new_user_registration_path %> ya da kayıtlıysan <%= link_to "Giriş yap", new_user_session_path %>
-  <% end %>
+
+<div id="logo_left">LOGO --- B&M CMS</div>
+
+<div id="logo_right">
+<% if user_signed_in? %>
+<% a=current_user.name %>
+
+Sisteme hoşgeldiniz, <%= a.split.each { |x| print x.capitalize!, " "}.join(" ") %>.
+<%= link_to "Çıkış yap", destroy_user_session_path, :method => :delete %><br>
+<%= link_to "Ayarlar", authentications_path %>
+<% else %>
+<%= link_to "Kayıt ol", new_user_registration_path %> ya da kayıtlıysan <%= link_to "Giriş yap", new_user_session_path %>
+<% end %>
 </div>
+
+<div id="containers" style="text-align: center;">
 
 
 

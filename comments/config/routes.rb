@@ -15,6 +15,7 @@ Comments::Application.routes.draw do
 
  # match 'comments/filter' => 'comments#filter'
   post "filter"=> "comments#filter", :as=> "filter"
+  match "mypage" => "comments#myPage", :as => "mypage"
 
 
   # The priority is based upon order of creation:
