@@ -122,23 +122,30 @@ color: #005931;
 text-decoration: none;
 }
 input {
--moz-border-bottom-colors: none;
--moz-border-image: none;
--moz-border-left-colors: none;
--moz-border-right-colors: none;
--moz-border-top-colors: none;
-border-color: -moz-use-text-color;
-border-style: dashed;
-border-width: 0 0 1px;
-width: 5cm;
+   background: #699662;
+   background: -webkit-gradient(linear, left top, left bottom, from(#174a0c), to(#699662));
+   background: -webkit-linear-gradient(top, #174a0c, #699662);
+   background: -moz-linear-gradient(top, #174a0c, #699662);
+   background: -ms-linear-gradient(top, #174a0c, #699662);
+   background: -o-linear-gradient(top, #174a0c, #699662);
+   padding: 6.5px 13px;
+   -webkit-border-radius: 38px;
+   -moz-border-radius: 38px;
+   border-radius: 38px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #ffffff;
+   font-size: 12px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   vertical-align: baseline;
+   line-height:40px;
 }
 select {
 border: medium none;
 font-style: italic;
-}
-textarea {
-border-style: dashed;
-border-width: 1px;
 }
 input.button, button, a.button, a.fixButton, p.buttonWrap, form a.help {
 display: none;
@@ -201,7 +208,7 @@ hr {
 
 #login_page {
     height:400px;
-    background-color:#7c99a3;
+    background: url("/images/bg.png");
     border-radius:60px;
     font-size:14px;
     text-align:left;
@@ -209,16 +216,65 @@ hr {
     padding-left:120px;
     margin-left:150px;
     margin-right:150px;
-    margin-top:100px;
+    //margin-top:160px;
 
+}
+
+#login_page_inside {
+    background-color: #D8D8D8;
+    width:350px;
+    height:320px;
+    border-radius:10px;
+    margin-left:40px;
+    padding-left:25px;
+    padding-top:30px;
+
+
+}
+#login_page_inside_header {
+    height:30px;
+    margin-left:-25px;
+    margin-top:-30px;
+    margin-bottom: 20px;
+    border: #909090 outset 2px;
+    background-color: #909090;
+    font-color: #708090;
+    text-align: center;
+    font-weight: bold;
+    border-radius:5px;
+    font-size:18px;
+    padding-top:8px;
 }
 
 #fields {
     text-align:left;
 }
-#buttons {
 
-}
+
+
+#buttonn {
+   border-top: 1px solid #529155;
+   background: #699662;
+   background: -webkit-gradient(linear, left top, left bottom, from(#174a0c), to(#699662));
+   background: -webkit-linear-gradient(top, #174a0c, #699662);
+   background: -moz-linear-gradient(top, #174a0c, #699662);
+   background: -ms-linear-gradient(top, #174a0c, #699662);
+   background: -o-linear-gradient(top, #174a0c, #699662);
+   padding: 6.5px 13px;
+   -webkit-border-radius: 38px;
+   -moz-border-radius: 38px;
+   border-radius: 38px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #ffffff;
+   font-size: 12px;
+   font-family: Georgia, Serif;
+   text-decoration: none;
+   vertical-align: baseline;
+   line-height:40px;
+   }
 
 #biz {
     text-align:center;
@@ -287,12 +343,14 @@ margin-bottom: 6px;
     border: #909090 solid 2px;
     width:220px;
     border-radius:6px;
-    position:absolute;
-    left:255px;
+    //position:absolute;
+    //left:255px;
+    float:left;
     text-align: top;
     min-height:250px;
     padding-top: 10px;
     padding-left: 6px;
+    margin-left:-65px;
 }
 
 #for_comment {
@@ -309,34 +367,6 @@ margin-bottom: 6px;
 
 #comment_item {
 
-}
-
-
-
-#login_page_inside {
-    background-color: #D8D8D8;
-    width:350px;
-    height:320px;
-    border-radius:10px;
-    margin-left:40px;
-    padding-left:25px;
-    padding-top:30px;
-
-
-}
-#login_page_inside_header {
-    height:30px;
-    margin-left:-25px;
-    margin-top:-30px;
-    margin-bottom: 20px;
-    border: #909090 outset 2px;
-    background-color: #909090;
-    font-color: #708090;
-    text-align: center;
-    font-weight: bold;
-    border-radius:5px;
-    font-size:18px;
-    padding-top:8px;
 }
 
 .authentications {
@@ -457,24 +487,241 @@ background-color:#e2e2e2;
 
 #logo_left{
 
-width:300px;
-background: url("/images/shiny1.jpg");
+width: 25%;
+background: url("/images/apple_logo_yesil1.jpg");
+background-size:90% 90%;
+background-repeat: no-repeat;
 height:150px;
-position:absolute;
-left:200px;
+//position:absolute;
+//left:200px;
 top:0px;
+padding-left:20px;
+float:left;
+margin-top:-152px;
+margin-left:20px;
 }
 
 #logo_right{
 
-width:650px;
+width:65%;
 height:150px;
-background: url("/images/shiny1.jpg");
-position:absolute;
-right:200px;
+background: url("/images/aaa.jpeg");
+background-size:100% 100%;
+//position:absolute;
+//right:200px;
 top:0px;
 text-align:right;
+border-radius:20px;
+padding-right:20px;
+float:right;
+margin-top:-152px;
+margin-right:20px;
+color:#fff;
+font-family: aller_bold;
 
 }
+/* Buttons */
+#guidance-button{ min-width:140px;}
+#navDemoBtn{ width:100px;}
+a.button, .button {
+	display: inline-block;
+  position: relative;
+  color: white;
+  background: none;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-weight: normal;
+  text-align: center;
+  line-height: normal;
+  text-decoration: none;
+  cursor: pointer;
+}
 
+button.button { /* Buttons made with the <button> tag */
+  background: none;
+  border: none;
+  padding: 0;
+  white-space: nowrap;
+	overflow: visible;
+}
 
+.button .label {
+  display: block;
+  margin: 0 18px;
+  background-image: url('/images/buttonsBgSprite.png');
+  background-position-x: 0;
+}
+
+.button .btnL, .button .btnR {
+  position: absolute;
+  top: 0;
+  width: 18px;
+  background-image: url('/images/buttonsSprite.png');
+}
+
+.button .btnL {
+  left: 0;
+  background-position-x: 0;
+}
+
+.button .btnR {
+  right: 0;
+  background-position-x: -18px;
+}
+
+.button:active { top: 1px; }
+
+/* Big Buttons */
+
+.button.big {
+	height: 43px;
+  font-size: 17px;
+}
+
+.button.big .label {
+	height: 32px;
+  padding: 11px 4px 0 4px;
+}
+
+.button.big.rightArrow .label {
+  padding-right: 10px;
+  margin-right: 36px;
+}
+
+.button.big .btnL, .button.big .btnR { height: 43px; }
+
+.button.big.rightArrow .btnR {
+  width: 36px;
+  background-position-x: -36px;
+}
+
+/* Small Buttons */
+
+.button.small {
+	height: 33px;
+  font-size: 13px;
+  /*font-weight: bold;*/
+}
+
+.button.small .label {
+	height: 25px;
+  padding: 8px 4px 0 4px;
+}
+
+.button.small .btnL, .button.small .btnR { height: 33px; }
+
+/* Colors & States */
+
+/* Go from one color to the next : -228px */
+/* Go from big to small : -129px */
+
+.button.blue.big .label, .button.blue.big .btnL                             { background-position: 0 0; }
+.button.blue.big .btnR                                                      { background-position: -18px 0; }
+.button.blue.big.rightArrow .btnR                                           { background-position: -36px 0; }
+.button.blue.big:hover .label, .button.blue.big:hover .btnL                 { background-position: 0 -86px; }
+.button.blue.big:hover .btnR                                                { background-position: -18px -86px; }
+.button.blue.big.rightArrow:hover .btnR                                     { background-position: -36px -86px; }
+.button.blue.big:active .label, .button.blue.big:active .btnL               { background-position: 0 -43px; }
+.button.blue.big:active .btnR                                               { background-position: -18px -43px; }
+.button.blue.big.rightArrow:active .btnR                                    { background-position: -36px -43px; }
+
+.button.orange.big .label, .button.orange.big .btnL                         { background-position: 0 -228px; }
+.button.orange.big .btnR                                                    { background-position: -18px -228px; }
+.button.orange.big.rightArrow .btnR                                         { background-position: -36px -228px; }
+.button.orange.big:hover .label, .button.orange.big:hover .btnL             { background-position: 0 -314px; }
+.button.orange.big:hover .btnR                                              { background-position: -18px -314px; }
+.button.orange.big.rightArrow:hover .btnR                                   { background-position: -36px -314px; }
+.button.orange.big:active .label, .button.orange.big:active .btnL           { background-position: 0 -271px; }
+.button.orange.big:active .btnR                                             { background-position: -18px -271px; }
+.button.orange.big.rightArrow:active .btnR                                  { background-position: -36px -271px; }
+
+.button.red.big .label, .button.red.big .btnL                               { background-position: 0 -456px; }
+.button.red.big .btnR                                                       { background-position: -18px -456px; }
+.button.red.big.rightArrow .btnR                                            { background-position: -36px -456px; }
+.button.red.big:hover .label, .button.red.big:hover .btnL                   { background-position: 0 -542px; }
+.button.red.big:hover .btnR                                                 { background-position: -18px -542px; }
+.button.red.big.rightArrow:hover .btnR                                      { background-position: -36px -542px; }
+.button.red.big:active .label, .button.red.big:active .btnL                 { background-position: 0 -499px; }
+.button.red.big:active .btnR                                                { background-position: -18px -499px; }
+.button.red.big.rightArrow:active .btnR                                     { background-position: -36px -499px; }
+
+.button.green.big .label, .button.green.big .btnL                           { background-position: 0 -684px; }
+.button.green.big .btnR                                                     { background-position: -18px -684px; }
+.button.green.big.rightArrow .btnR                                          { background-position: -36px -684px; }
+.button.green.big:hover .label, .button.green.big:hover .btnL               { background-position: 0 -770px; }
+.button.green.big:hover .btnR                                               { background-position: -18px -770px; }
+.button.green.big.rightArrow:hover .btnR                                    { background-position: -36px -770px; }
+.button.green.big:active .label, .button.green.big:active .btnL             { background-position: 0 -727px; }
+.button.green.big:active .btnR                                              { background-position: -18px -727px; }
+.button.green.big.rightArrow:active .btnR                                   { background-position: -36px -727px; }
+
+.button.black.big .label, .button.black.big .btnL                           { background-position: 0 -912px; }
+.button.black.big .btnR                                                     { background-position: -18px -912px; }
+.button.black.big.rightArrow .btnR                                          { background-position: -36px -912px; }
+.button.black.big:hover .label, .button.black.big:hover .btnL               { background-position: 0 -998px; }
+.button.black.big:hover .btnR                                               { background-position: -18px -998px; }
+.button.black.big.rightArrow:hover .btnR                                    { background-position: -36px -998px; }
+.button.black.big:active .label, .button.black.big:active .btnL             { background-position: 0 -955px; }
+.button.black.big:active .btnR                                              { background-position: -18px -955px; }
+.button.black.big.rightArrow:active .btnR                                   { background-position: -36px -955px; }
+
+.button.turquoise.big .label, .button.turquoise.big .btnL                   { background-position: 0 -1140px; }
+.button.turquoise.big .btnR                                                 { background-position: -18px -1140px; }
+.button.turquoise.big.rightArrow .btnR                                      { background-position: -36px -1140px; }
+.button.turquoise.big:hover .label, .button.turquoise.big:hover .btnL       { background-position: 0 -1226px; }
+.button.turquoise.big:hover .btnR                                           { background-position: -18px -1226px; }
+.button.turquoise.big.rightArrow:hover .btnR                                { background-position: -36px -1226px; }
+.button.turquoise.big:active .label, .button.turquoise.big:active .btnL     { background-position: 0 -1183px; }
+.button.turquoise.big:active .btnR                                          { background-position: -18px -1183px; }
+.button.turquoise.big.rightArrow:active .btnR                               { background-position: -36px -1183px; }
+
+.button.blue.small .label, .button.blue.small .btnL                         { background-position: 0 -129px; }
+.button.blue.small .btnR                                                    { background-position: -18px -129px; }
+.button.blue.small:hover .label, .button.blue.small:hover .btnL             { background-position: 0 -195px; }
+.button.blue.small:hover .btnR                                              { background-position: -18px -195px; }
+.button.blue.small:active .label, .button.blue.small:active .btnL           { background-position: 0 -162px; }
+.button.blue.small:active .btnR                                             { background-position: -18px -162px; }
+
+.button.orange.small .label, .button.orange.small .btnL                     { background-position: 0 -357px; }
+.button.orange.small .btnR                                                  { background-position: -18px -357px; }
+.button.orange.small:hover .label, .button.orange.small:hover .btnL         { background-position: 0 -423px; }
+.button.orange.small:hover .btnR                                            { background-position: -18px -423px; }
+.button.orange.small:active .label, .button.orange.small:active .btnL       { background-position: 0 -390px; }
+.button.orange.small:active .btnR                                           { background-position: -18px -390px; }
+
+.button.red.small .label, .button.red.small .btnL                           { background-position: 0 -585px; }
+.button.red.small .btnR                                                     { background-position: -18px -585px; }
+.button.red.small:hover .label, .button.red.small:hover .btnL               { background-position: 0 -651px; }
+.button.red.small:hover .btnR                                               { background-position: -18px -651px; }
+.button.red.small:active .label, .button.red.small:active .btnL             { background-position: 0 -618px; }
+.button.red.small:active .btnR                                              { background-position: -18px -618px; }
+
+.button.green.small .label, .button.green.small .btnL                       { background-position: 0 -813px; }
+.button.green.small .btnR                                                   { background-position: -18px -813px; }
+.button.green.small:hover .label, .button.green.small:hover .btnL           { background-position: 0 -879px; }
+.button.green.small:hover .btnR                                             { background-position: -18px -879px; }
+.button.green.small:active .label, .button.green.small:active .btnL         { background-position: 0 -846px; }
+.button.green.small:active .btnR                                            { background-position: -18px -846px; }
+
+.button.black.small .label, .button.black.small .btnL                       { background-position: 0 -1041px; }
+.button.black.small .btnR                                                   { background-position: -18px -1041px; }
+.button.black.small:hover .label, .button.black.small:hover .btnL           { background-position: 0 -1107px; }
+.button.black.small:hover .btnR                                             { background-position: -18px -1107px; }
+.button.black.small:active .label, .button.black.small:active .btnL         { background-position: 0 -1074px; }
+.button.black.small:active .btnR                                            { background-position: -18px -1074px; }
+
+.button.turquoise.small .label, .button.turquoise.small .btnL               { background-position: 0 -1269px; }
+.button.turquoise.small .btnR                                               { background-position: -18px -1269px; }
+.button.turquoise.small:hover .label, .button.turquoise.small:hover .btnL   { background-position: 0 -1335px; }
+.button.turquoise.small:hover .btnR                                         { background-position: -18px -1335px; }
+.button.turquoise.small:active .label, .button.turquoise.small:active .btnL { background-position: 0 -1302px; }
+.button.turquoise.small:active .btnR                                        { background-position: -18px -1302px; }
+
+@-moz-document url-prefix() { /* The following CSS properties will be seen only by Firefox */
+  button.button.big.rightArrow .label {
+    margin-right: 32px;
+  }
+
+  button.button.small .label {
+    margin-right: 14px;
+  }
+  }
