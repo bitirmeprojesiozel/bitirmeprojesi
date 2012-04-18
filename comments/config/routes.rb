@@ -9,14 +9,17 @@ Comments::Application.routes.draw do
 
   resources :comments
 
-  match '/auth/:provider/callback' => 'authentications#create'
+  #match '/auth/:provider/callback' => 'authentications#create'
 
+  match '/auth/:provider/callback', :to => 'authentications#create'
+  match '/auth/failure', :to => 'authentications#failure'
   #get 'comments/filter'
 
  # match 'comments/filter' => 'comments#filter'
   post "filter"=> "comments#filter", :as=> "filter"
   match "mypage" => "comments#myPage", :as => "mypage"
 
+  post "mypagefilter"=> "comments#myPageFilter", :as=> "mypagefilter"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

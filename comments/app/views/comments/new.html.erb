@@ -1,6 +1,14 @@
-<h1>Yeni İçerik Girişi</h1>
+<div id="container">
+  <div id="container_header">Yeni İçerik Girişi</div>
 
 
 <%= render 'form' %>
 
-<%= link_to 'Back', comments_path %>
+
+
+<%= link_to comments_path, :class=> 'button small turquoise' do %>
+                  <span class="btnL"></span>
+                  <span class="label"> <%= "Geri" %></span>
+                  <span class="btnR"></span>
+              <% end %>
+    </div>

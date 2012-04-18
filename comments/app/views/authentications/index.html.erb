@@ -1,24 +1,26 @@
 <div id="container">
   <div id="container_header">Ayarlar</div>
 
+  <div id="page">
+    <div id="left_side"></div>
 
-  <div id="options_right">
+  <div id="right_side">
 <% if @authentications %>
   <% unless @authentications.empty? %>
-    <p><strong>You can sign in to this account using:</strong></p>
+    <p><strong>Bu hesapları kullanarak sisteme giriş yapabilirsiniz:</strong></p>
     <div class="authentications">
       <% for authentication in @authentications %>
         <div class="authentication">
           <%= image_tag "/png/#{authentication.provider}_32.png", :size => "32x32" %>
           <div class="provider"><%= authentication.provider_name %></div>
           <div class="uid"><%= authentication.uid %></div>
-          <%= link_to "X", authentication, :confirm => 'Are you sure you want to remove this authentication option?', :method => :delete, :class => "remove" %>
+          <%= link_to "X", authentication, :confirm => 'Bu bağlantıyı silmek istediğinizden emin misiniz ?', :method => :delete, :class => "remove" %>
         </div>
       <% end %>
       <div class="clear"></div>
     </div>
   <% end %>
-  <p><strong>Add another service to sign in with:</strong></p>
+  <p><strong>Bağlanmak istediğin yeni bir sosyal ağ seç:</strong></p>
 <% else %>
   <p><strong>Sign in through one of these services:</strong></p>
 <% end %>
@@ -54,7 +56,12 @@
     </div>
 
 
-
     </div>
 
- <%= link_to "Geri", comments_path %>
+
+<%= link_to comments_path, :class=> 'button small turquoise' do %>
+                  <span class="btnL"></span>
+                  <span class="label"> <%= "Geri" %></span>
+                  <span class="btnR"></span>
+              <% end %>
+    </div>

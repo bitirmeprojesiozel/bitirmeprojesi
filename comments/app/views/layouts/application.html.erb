@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Comments</title>
+<title>B&M</title>
 <%= stylesheet_link_tag "application", :media => "all" %>
 <%= javascript_include_tag "application" %>
 <%= csrf_meta_tags %>
@@ -9,21 +9,41 @@
 <body>
 
 
-<div id="logo_left">LOGO --- B&M CMS</div>
-
-<div id="logo_right">
-<% if user_signed_in? %>
-<% a=current_user.name %>
-
-Sisteme hoşgeldiniz, <%= a.split.each { |x| print x.capitalize!, " "}.join(" ") %>.
-<%= link_to "Çıkış yap", destroy_user_session_path, :method => :delete %><br>
-<%= link_to "Ayarlar", authentications_path %>
-<% else %>
-<%= link_to "Kayıt ol", new_user_registration_path %> ya da kayıtlıysan <%= link_to "Giriş yap", new_user_session_path %>
-<% end %>
-</div>
 
 <div id="containers" style="text-align: center;">
+ <a href="../comments"><div id="logo_left"></div></a>
+
+  <div id="logo_right">
+  <% if user_signed_in? %>
+  <% a=current_user.name %>
+
+  Sisteme hoşgeldiniz, <%= a.split.each { |x| print x.capitalize!, " "}.join(" ") %>.
+  <%= link_to destroy_user_session_path, :method => :delete, :class=> 'button small green' do %>
+                  <span class="btnL"></span>
+                  <span class="label"> <%= "Çıkış Yap" %></span>
+                  <span class="btnR"></span>
+              <% end %><br>
+
+    <%= link_to authentications_path, :class=> 'button small green' do %>
+                  <span class="btnL"></span>
+                  <span class="label"> <%= "Ayarlar" %></span>
+                  <span class="btnR"></span>
+              <% end %>
+  <% else %>
+
+     <%= link_to new_user_registration_path, :class=> 'button small green' do %>
+                  <span class="btnL"></span>
+                  <span class="label"> <%= "Kayıt ol" %></span>
+                  <span class="btnR"></span>
+              <% end %> ya da kayıtlıysan
+
+        <%= link_to new_user_session_path, :class=> 'button small green' do %>
+                  <span class="btnL"></span>
+                  <span class="label"> <%= "Giriş yap" %></span>
+                  <span class="btnR"></span>
+              <% end %>
+  <% end %>
+  </div>
 
 
 

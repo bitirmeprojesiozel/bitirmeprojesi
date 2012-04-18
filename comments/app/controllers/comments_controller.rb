@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
   def show
 
 
-    @comment = Comment.find
+    @comment = Comment.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -106,6 +106,13 @@ class CommentsController < ApplicationController
       format.html
       format.json { render :json => @comment }
     end
+  end
+
+  def myPageFilter
+
+     type_id= params[:type_id]
+    @comments= Comment.where(:type_id => type_id, :user_id => current_user.id)
+    render :action=> :myPage
   end
 
 end

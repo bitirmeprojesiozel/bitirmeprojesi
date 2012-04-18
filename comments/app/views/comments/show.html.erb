@@ -1,5 +1,16 @@
-<p id="notice"><%= notice %></p>
+
+<div id="container"><div id="container_header">Yorumlar</div>
+  <div id="page">
+<p id="notice">Yorumunuz kaydedildi.</p>
 
 
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+
+    <%= link_to comments_path, :class=> 'button small turquoise' do %>
+                <span class="btnL"></span>
+                <span class="label"> <%= "Geri" %></span>
+                <span class="btnR"></span>
+            <% end %>
+
+
+    </div>
+    </div>

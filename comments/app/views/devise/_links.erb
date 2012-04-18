@@ -7,7 +7,11 @@
 <%# end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
-  <%= link_to "Şifremi unuttum", new_password_path(resource_name) %><br />
+  <%= link_to new_password_path(resource_name), :class=> 'button small turquoise' do %>
+                <span class="btnL"></span>
+                <span class="label"> <%= "Şifremi unuttum" %></span>
+                <span class="btnR"></span>
+            <% end %><br />
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>

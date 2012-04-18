@@ -1,16 +1,18 @@
-<div align="center" id="login_page">
-  <div id="login_page_inside"><div id="login_page_inside_header">Giriş</div>
+  <div id="container"><div id="container_header">Giriş</div>
+    <div id="page">
 
+      <div id="right_side">
+    <div style="margin-left: 15px;">
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
 
 
-        <div><%= f.label 'E-Posta' %><br />
+        <div><%= f.label 'E-Posta :' %><br />
           <%= f.email_field :email, :placeholder => "e-posta" %></div>
 
 
         <% if @user.password_required? %>
-            <div><%= f.label 'Şifre' %><br />
+            <div><%= f.label 'Şifre :' %><br />
               <%= f.password_field :password, :placeholder => "şifre" %></div>
         <% end %>
         <br />
@@ -21,14 +23,14 @@
 
         <br />
 
-        <div id="enter_button"><%= f.submit "Giriş yap" %></div>
+        <%= f.submit "Giriş yap" %>
     <% end %>
 
 
 
+<%= render "links" %>
 
-    <%= render "links" %>
-
+      </div>
     <a href="/auth/twitter" class="auth_provider">
       <%= image_tag "/png/twitter_64.png", :size => "64x64", :alt => "Twitter" %>
       Twitter
@@ -45,7 +47,7 @@
       <%= image_tag "/png/openid_64.png", :size => "64x64", :alt => "OpenID" %>
       OpenID
     </a>
-
+        </div>
+   </div>
   </div>
-</div>
 <div id='biz'>Bu site Barış YILDIRIM ve Mustafa OTAĞ tarafından yapılmıştır.</div>
