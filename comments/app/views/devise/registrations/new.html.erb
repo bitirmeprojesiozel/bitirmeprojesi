@@ -1,0 +1,26 @@
+<div id="container"><div id="container_header">Kayıt Ol</div>
+
+  <div id="page" align="center" style="margin-right: 120px;">
+
+<%= form_for(resource, :as => resource_name, :url => new_user_session_path) do |f| %>
+  <%= devise_error_messages! %>
+
+    <div><%= f.label "İsim-Soyisim" %><br />
+  <%= f.text_field :name %></div>
+
+  <div><%= f.label "Email" %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label "Şifre" %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label "Şifre Tekrarı" %><br />
+  <%= f.password_field :password_confirmation %></div><br>
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+<%= render "links" %>
+
+     </div>
+    </div>

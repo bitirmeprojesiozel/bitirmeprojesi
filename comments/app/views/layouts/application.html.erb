@@ -9,26 +9,32 @@
 <body>
 
 
-
+ <div id="en_dis">
 <div id="containers" style="text-align: center;">
- <a href="../comments"><div id="logo_left"></div></a>
 
+  <a href="../comments"><div id="logo_left"></div></a>
   <div id="logo_right">
+
+
   <% if user_signed_in? %>
   <% a=current_user.name %>
 
   Sisteme hoşgeldiniz, <%= a.split.each { |x| print x.capitalize!, " "}.join(" ") %>.
-  <%= link_to destroy_user_session_path, :method => :delete, :class=> 'button small green' do %>
-                  <span class="btnL"></span>
-                  <span class="label"> <%= "Çıkış Yap" %></span>
-                  <span class="btnR"></span>
-              <% end %><br>
 
-    <%= link_to authentications_path, :class=> 'button small green' do %>
+        <%= link_to authentications_path, :class=> 'button small green' do %>
                   <span class="btnL"></span>
                   <span class="label"> <%= "Ayarlar" %></span>
                   <span class="btnR"></span>
               <% end %>
+
+
+        <%= link_to destroy_user_session_path, :method => :delete, :class=> 'button small green' do %>
+                  <span class="btnL"></span>
+                  <span class="label"> <%= "Çıkış Yap" %></span>
+                  <span class="btnR"></span>
+              <% end %>
+
+
   <% else %>
 
      <%= link_to new_user_registration_path, :class=> 'button small green' do %>
@@ -49,5 +55,6 @@
 
 <%= yield %>
 </div>
+     </div>
 </body>
 </html>

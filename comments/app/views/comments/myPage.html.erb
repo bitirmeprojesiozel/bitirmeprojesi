@@ -15,7 +15,7 @@
 
 
             <%= form_tag(mypagefilter_path) do |f| %>
-            <%= select_tag(:type_id ,options_for_select(["Seçiniz"])+options_from_collection_for_select(Type.find(:all), "id", "name"),{:onchange => "this.form.submit();"} ) %>
+            <div id="styled_select"><%= select_tag(:type_id ,options_for_select(["Seçiniz"])+options_from_collection_for_select(Type.find(:all), "id", "name"),{:onchange => "this.form.submit();"} ) %></div>
         <% end %>
 
 

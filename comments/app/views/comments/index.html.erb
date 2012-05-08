@@ -3,43 +3,29 @@
 
   <% a=current_user.name %>
 
+  <%= link_to mypage_path, :class=> 'button small orange' do %>
+      <span class="btnL"></span>
+      <span class="label"> <%= a.split.each { |x| print x.capitalize!, " "}.join(" ") %></span>
+      <span class="btnR"></span>
+  <% end %>
 
-  <%= link_to mypage_path, :class=> 'button small turquoise' do %>
-                <span class="btnL"></span>
-                <span class="label"> <%= a.split.each { |x| print x.capitalize!, " "}.join(" ") %></span>
-                <span class="btnR"></span>
-            <% end %>
-
-  <%= link_to new_comment_path, :class=> 'button small turquoise' do %>
-                <span class="btnL"></span>
-                <span class="label"> <%= "Yeni İçerik Girişi" %></span>
-                <span class="btnR"></span>
-            <% end %>
+  <%= link_to new_comment_path, :class=> 'button small orange' do %>
+      <span class="btnL"></span>
+      <span class="label"> <%= "Yeni İçerik Girişi" %></span>
+      <span class="btnR"></span>
+  <% end %>
 
   <table>
     <tr >
       <td>
         <div id="page">
-
-
-
           <div id="left_side">
 
-
-
-
             <%= form_tag(filter_path) do |f| %>
-            <%= select_tag(:type_id ,options_for_select(["Seçiniz"])+options_from_collection_for_select(Type.find(:all), "id", "name"),{:onchange => "this.form.submit();"} ) %>
-        <% end %>
-
-        <%= date_select("article", "written_on", :start_year => 2010) %>
-
-
-
+                <div id="styled_select"><%= select_tag(:type_id ,options_for_select(["Seçiniz"])+options_from_collection_for_select(Type.find(:all), "id", "name"),{:onchange => "this.form.submit();"} ) %></div>
+            <% end %>
+            <%#= date_select("article", "written_on", :start_year => 2010) %>
           </div>
-
-
-
           <div id="right_side">
 
             <% @comments.reverse.each do |f| %>
@@ -51,25 +37,11 @@
                           <div id="comment_item"><%= Tag.find(f.tag_id).name+ "-" +Type.find(f.type_id).name %></div>
                           <div id="comment_item"><%= f.created_at.try(:strftime, "%d/%m/%Y - %H:%M") %></div>
                           <div id="comment_item"><%= f.message %></div>
-                        </div>
-                        </br>
-
-
+                        </div></br>
                     <% end %>
-
-
-
-
                 <% end %>
             <% end %>
-
-
-
-
           </div>
-
-
-
         </div>
       </td>
     </tr>
