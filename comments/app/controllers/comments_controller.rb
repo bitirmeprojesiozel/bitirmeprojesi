@@ -121,4 +121,24 @@ class CommentsController < ApplicationController
     render :action=> :myPage
   end
 
+  def hide
+
+    @comment = Comment.find(params[:id])
+    @comment.hiding = false
+    @comment.update_attributes(params[:comment])
+    redirect_to mypage_path
+    #render :action=> :myPage
+
+  end
+
+  def unhide
+
+    @comment = Comment.find(params[:id])
+    @comment.hiding = true
+    @comment.update_attributes(params[:comment])
+    redirect_to mypage_path
+
+  end
+
+
 end

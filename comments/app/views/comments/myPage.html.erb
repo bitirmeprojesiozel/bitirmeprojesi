@@ -35,7 +35,11 @@
                           <div id="comment_item"><%= Tag.find(f.tag_id).name+ "-" +Type.find(f.type_id).name %></div>
                           <div id="comment_item"><%= f.created_at.try(:strftime, "%d/%m/%Y  -  %H:%M") %></div>
                           <div id="comment_item"><%= f.message %></div>
-                          <span id="comment_item"><%= link_to 'Gizle', f, :confirm => 'Emin Misiniz?', :method => :delete %></span>
+                          <% if f.hiding==true %>
+                          <span id="comment_item"><%=link_to "Gizle", :controller => "comments", :action => "hide", :id => f  %></span>
+                              <% else %>
+                          <span id="comment_item"><%=link_to "Gizleme", :controller => "comments", :action => "unhide", :id => f  %></span>
+                              <% end %>
                           <span id="comment_item"><%= link_to 'Düzenle', edit_comment_path(f) %></span>
                           <span id="comment_item"><%= link_to 'Sil', f, :confirm => 'Emin Misiniz?', :method => :delete %></span>
                         </div>

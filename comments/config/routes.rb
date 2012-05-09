@@ -20,6 +20,9 @@ Comments::Application.routes.draw do
   match "mypage" => "comments#myPage", :as => "mypage"
 
   post "mypagefilter"=> "comments#myPageFilter", :as=> "mypagefilter"
+  get "hide/:id"=> "comments#hide"
+  get "unhide/:id" => "comments#unhide"
+  #match '/hide/:id', :to => 'comments#hide'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

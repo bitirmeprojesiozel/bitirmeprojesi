@@ -30,7 +30,7 @@
 
             <% @comments.reverse.each do |f| %>
                 <% TakenLecture.all.each do |t| %>
-                    <% if t.user_id==current_user.id and t.tag_id==f.tag_id  %>
+                    <% if t.user_id==current_user.id and t.tag_id==f.tag_id and f.hiding == true  %>
 
                         <% a=User.find(f.user_id).name %>
                         <div id="for_comment"><div id="comments_header"><%= a.split.each { |x| print x.capitalize!, " "}.join(" ") %></div>
