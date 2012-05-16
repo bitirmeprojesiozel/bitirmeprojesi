@@ -44,9 +44,8 @@
                     <% if f.report == true  %>
 
                         <% a=User.find(f.user_id).name %>
-                        <div id="for_comment"><div id="comments_header"><%= a.split.each { |x| print x.capitalize!, " "}.join(" ") %></div>
+                        <div id="for_comment"><div id="comments_header"><%= a.split.each { |x| print x.capitalize!, " "}.join(" ") %><div style="float: right; margin-right: 3px; font-weight: normal; font-size: 12px;"><%= f.created_at.try(:strftime, "%d/%m/%Y - %H:%M") %></div></div>
                           <div id="comment_item"><%= Tag.find(f.tag_id).name+ "-" +Type.find(f.type_id).name %></div>
-                          <div id="comment_item"><%= f.created_at.try(:strftime, "%d/%m/%Y - %H:%M") %></div>
                           <div id="comment_item"><%= f.message %></div>
                           <span id="comment_item"><%= link_to 'Sil', f, :confirm => 'Emin Misiniz?', :method => :delete %></span>
                           <span id="comment_item"><%=link_to "Şikayeti Kaldır", :id => f, :controller => "comments", :action => "unreporting"  %></span>
@@ -64,9 +63,8 @@
                     <% if t.user_id==current_user.id and t.tag_id==f.tag_id and f.hiding == true  %>
 
                         <% a=User.find(f.user_id).name %>
-                        <div id="for_comment"><div id="comments_header"><%= a.split.each { |x| print x.capitalize!, " "}.join(" ") %></div>
+                        <div id="for_comment"><div id="comments_header"><%= a.split.each { |x| print x.capitalize!, " "}.join(" ") %><div style="float: right; margin-right: 3px; font-weight: normal; font-size: 12px;"><%= f.created_at.try(:strftime, "%d/%m/%Y - %H:%M") %></div></div>
                           <div id="comment_item"><%= Tag.find(f.tag_id).name+ "-" +Type.find(f.type_id).name %></div>
-                          <div id="comment_item"><%= f.created_at.try(:strftime, "%d/%m/%Y - %H:%M") %></div>
                           <div id="comment_item"><%= f.message %></div>
 
                           <% if f.translating? %>
