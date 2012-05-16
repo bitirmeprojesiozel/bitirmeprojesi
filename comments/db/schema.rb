@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120508093131) do
+ActiveRecord::Schema.define(:version => 20120515093621) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -20,15 +20,8 @@ ActiveRecord::Schema.define(:version => 20120508093131) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "comments", :force => true do |t|
-    t.string   "message"
-    t.integer  "user_id"
-    t.integer  "type_id"
-    t.integer  "tag_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.boolean  "hiding"
-  end
+# Could not dump table "comments" because of following StandardError
+#   Unknown type 'String' for column 'translating'
 
   create_table "microposts", :force => true do |t|
     t.datetime "created_at", :null => false

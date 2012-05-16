@@ -6,6 +6,12 @@ class CommentsController < ApplicationController
   def index
     @messages = Type.all
        @comments = Comment.all
+
+     if params[:id] != nil
+
+      @translate= translate
+      redirect_to comments_path
+      end
      # @comments = Comment.paginate :per_page => 5, :page => params[:page]
 
     respond_to do |format|
@@ -53,6 +59,8 @@ class CommentsController < ApplicationController
     @comment.tag_id = params[:tag_id]
     @comment.type_id = params[:type_id]
     @comment.user_id=current_user.id
+    @comment.hiding = true
+    @comment.report = false
 
 
     respond_to do |format|
@@ -137,6 +145,42 @@ class CommentsController < ApplicationController
     @comment.hiding = true
     @comment.update_attributes(params[:comment])
     redirect_to mypage_path
+
+  end
+
+  def reporting
+
+    @comment = Comment.find(params[:id])
+    @comment.report = true
+    @comment.update_attributes(params[:comment])
+    redirect_to comments_path
+
+  end
+
+  def unreporting
+
+    @comment = Comment.find(params[:id])
+    @comment.report = false
+    @comment.update_attributes(params[:comment])
+    redirect_to comments_path
+
+  end
+
+
+   def translate
+
+
+    return Comment.find(params[:id]).translating
+
+
+
+
+
+   end
+
+   def untranslate
+
+    redirect_to comments_path
 
   end
 

@@ -1,4 +1,4 @@
-<div id="container"><div id="container_header">Duyurular</div>
+
   <%= form_for(@comment) do |f| %>
       <% if @comment.errors.any? %>
           <div id="error_explanation">
@@ -29,8 +29,13 @@
         <tr>
           <td><%=	'Ders Seçiniz:' %></td>
 
-          <td><p style="color: red; font-weight: bold; min-width: 100px; margin-left: 5px;"><%= Tag.find(@comment.tag_id).name %></p></td>
+            <% if @comment.tag_id? %>
+          <td>
 
+            <p style="color: red; font-weight: bold; min-width: 100px; margin-left: 5px;"><%= Tag.find(@comment.tag_id).name %></p>
+
+                </td>
+                <% end %>
           <td>
 
             <% b=Array.new %>
@@ -50,8 +55,12 @@
           <td>
             <%=	'Etiket Seçiniz:' %>
           </td>
+            <% if @comment.type_id? %>
+          <td>
 
-          <td><p style="color: red; font-weight: bold; min-width: 100px; margin-left: 5px;"><%= Type.find(@comment.type_id).name %></p></td>
+            <p style="color: red; font-weight: bold; min-width: 100px; margin-left: 5px;"><%= Type.find(@comment.type_id).name %></p>
+
+                </td><% end %>
 
 
           <td><%= select_tag(:type_id ,options_from_collection_for_select(Type.find(:all), "id", "name"))  %> </td></tr>
@@ -72,6 +81,4 @@
       <span class="label"> <%= "Geri" %></span>
       <span class="btnR"></span>
   <% end %>
-</div>
-
 </div>
