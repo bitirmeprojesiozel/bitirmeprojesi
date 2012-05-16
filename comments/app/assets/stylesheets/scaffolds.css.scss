@@ -200,13 +200,15 @@ div {
   color: green; }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table; }
+  //padding: 2px;
+  background-color: #ff5400;
+  display: table;
+  border-radius:60px;
+  }
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
+  border: 3px solid red;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
@@ -218,7 +220,7 @@ div {
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
-    background-color: #c00;
+    background-color: #ffa940;
     color: #fff; }
   ul li {
     font-size: 12px;

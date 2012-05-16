@@ -23,6 +23,16 @@
           <%= text_area_tag 'message', @comment.message, :size => '100x20'  %>
           </td>
         </tr>
+
+        <tr>
+          <td>
+            <%=	'Çeviri Giriniz:' %>
+          </td>
+          <td>
+          <%= text_area_tag 'translating', @comment.translating, :size => '100x10'  %>
+          </td>
+        </tr>
+
         </table>
 
       <table>
@@ -72,11 +82,16 @@
 
 
       <div class="actions">
-        <%= f.submit "Düzenle" %>
+
+        <% if @comment.translating.blank? %>
+        <%= f.submit "Oluştur", :confirm => 'Çeviri Girmediniz, Devam Etmek İstiyor Musunuz?' %>
+            <% else %>
+        <%= f.submit "Oluştur", :confirm => 'Devam Etmek İstiyor Musunuz?' %>
+                              <% end %>
       </div>
   <% end %>
 
-  <%= link_to mypage_path, :class=> 'button small turquoise' do %>
+  <%= link_to :back, :class=> 'button small turquoise' do %>
       <span class="btnL"></span>
       <span class="label"> <%= "Geri" %></span>
       <span class="btnR"></span>

@@ -1,57 +1,149 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
 en:
+  activerecord:
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        accepted: "kabul edilmelidir"
+        blank: "boş bırakılamaz"
+        confirmation: "teyit için girilen değerle uyuşmuyor"
+        empty: "boş bırakılamaz"
+        equal_to: "%{count} olmalı"
+        even: "çift olmalı"
+        exclusion: "ayrılmış"
+        greater_than: "%{count} den/dan büyük olmalı"
+        greater_than_or_equal_to: "%{count} sayısından büyük veya eşit olmalı"
+        inclusion: "listeye dahil değil"
+        invalid: "geçersiz"
+        less_than: "%{count} sayısından küçük olmalı"
+        less_than_or_equal_to: "%{count} sayısından küçük veya eşit olmalı"
+        not_a_number: "sayı değil"
+        odd: "tek olmalı"
+        record_invalid: "Doğrulama başarısız oldu: %{errors}"
+        taken: "önceden alınmış"
+        too_long: "çok uzun. (maksimum %{count} karakter olabilir)"
+        too_short: "çok kısa (minimum %{count} karakter olabilir)"
+        wrong_length: "yanlış uzunluk (%{count} karakter olmalı)"
+
+
+
+      models:
+        comment:
+          attributes:
+            body:
+              no_body_generic: "Yukarıdaki kutuya yaptıklarınızı yazın."
+              no_body_task: "Yukarıdaki kutuya bu görev ile ilgili yaptıklarınızı yazın."
+        conversation:
+          attributes:
+            body:
+              no_body_generic: "Sohbeti başlatmak için bir yorum yazın."
+            name:
+              no_title: "Bu sohbete bir başlık verin."
+      template:
+        body: "Aşağıdaki alanlarla ilgili sorunlar oluştu:"
+        header:
+          one: "1 hata sebebiyle bu %{model} kaydedilemedi"
+          other: "%{count} hata sebebiyle bu %{model} kaydedilemedi"
+    attributes:
+      user:
+        email: "E-Posta"
+        gsm: "Cep Telefonu"
+        sex: "Cinsiyet"
+        active: "Aktif"
+        passive: "Pasif"
+        role: "Rolü"
+        name: "Adı"
+        surname: "Soyadı"
+        password: "Şifre"
+        password_confirmation: "Şifre Doğrulama"
+        current_password: "Güncel Şifre"
+        password: "Şifre"
+        confirm_password: "Şifreyi Doğrula"
+        sign_in_count: "Sisteme giriş sayısı"
+        current_sign_in_at: "Şu Anki Oturumu Açma Tarihi"
+        last_sign_in_at: "Son Oturumu Açma Tarihi"
+      supervisor:
+        title: "Ünvanı"
+      parent:
+        occupation_type: "Mesleği"
+        alive: "Hayatta"
+      student_counselor_parent:
+        guardian: "Velisi"
+        parental_relation_type: "Yakınlık Derecesi"
+      director:
+        title: "Ünvanı"
+      student:
+        grade: "Sınıfı"
+        tax_id: "T.C. Kimlik"
+        parents_divorced: "Anne Baba Ayrı"
+        birth_date: "Doğum Tarihi"
+        secondary_school_id: "Okul"
+        curriculum_program_types: "Program Türleri"
+      student_counselor:
+        class_name: "Şubesi"
+        institution_number: "Öğrenci No"
+      counselor_study_program_detail:
+        number_of_additional_questions: "Ek Soru Sayısı"
+      institution:
+        activity_start_date: "Üyelik Başlangıç Tarihi"
+        institution_activity_start_date: "Üyelik Başlangıç Tarihi"
+        start_date: "Çalışma Programı Başlangıç Tarihi"
+        end_date: "Çalışma Programı Bitiş Tarihi"
+        institution_activity_state: "Üyelik Tipi"
+        institution_type_id: "Kurum Tipi"
+        name: "Kurum Adı"
+        address: "Kurum Adresi"
+
+  coupon:
+    new: "Yeni Kupon"
+
+  helpers:
+    submit:
+      update: "Güncelle"
+      create: "Oluştur"
+
   errors:
     messages:
+      not_found: "bulunamadı"
+      already_confirmed: "zaten onaylanmış."
+      not_locked: "açılmamış."
       expired: "has expired, please request a new one"
-      not_found: "not found"
-      already_confirmed: "was already confirmed, please try signing in"
-      not_locked: "was not locked"
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+        one: "1 hata bulundu."
+        other: "%{count} hata bulundu."
 
   devise:
     failure:
-      already_authenticated: 'You are already signed in.'
-      unauthenticated: 'You need to sign in or sign up before continuing.'
-      unconfirmed: 'You have to confirm your account before continuing.'
-      locked: 'Your account is locked.'
-      invalid: 'Invalid email or password.'
-      invalid_token: 'Invalid authentication token.'
-      timeout: 'Your session expired, please sign in again to continue.'
-      inactive: 'Your account was not activated yet.'
+      already_authenticated: "zaten giriş yapılmış."
+      unauthenticated: 'Devam etmeden önce giriş yapmanız ya da kayıt olmanız gerekiyor.'
+      unconfirmed: 'Devam etmeden önce hesabınızı onaylamanız gerekiyor.'
+      locked: 'Hesabınız kilitli.'
+      invalid: 'E-Posta veya Şifre hatalı. Lütfen kontrol edin.'
+      invalid_token: 'Kimlik denetimi anahtarı yanlış.'
+      timeout: 'Oturumunuzun süresi geçmiş. Devam etmek için lütfen giriş yapın.'
+      inactive: 'Hesabınız etkin değil.'
     sessions:
-      signed_in: 'Signed in successfully.'
-      signed_out: 'Signed out successfully.'
+      signed_in: 'Başarıyla giriş yapıldı.'
+      signed_out: 'Başarıyla çıkış yapıldı.'
     passwords:
-      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
-      updated: 'Your password was changed successfully. You are now signed in.'
-      updated_not_active: 'Your password was changed successfully.'
-      send_paranoid_instructions: "If your e-mail exists on our database, you will receive a password recovery link on your e-mail"
+      send_instructions: 'Birkaç dakika içinde emailinize şifrenizi nasıl sıfırlayacağınız konusunda talimatlar gönderilecek.'
+      updated: 'Şifreniz başarıyla değiştirildi. Şimdi giriş yaptınız.'
     confirmations:
-      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
-      send_paranoid_instructions: 'If your e-mail exists on our database, you will receive an email with instructions about how to confirm your account in a few minutes.'
-      confirmed: 'Your account was successfully confirmed. You are now signed in.'
+      send_instructions: 'Birkaç dakika içinde emailinize hesabınızı nasıl onaylayacağınız konusunda talimatlar gönderilecek.'
+      confirmed: 'Hesabınız başarıyla onaylandı. Şimdi giriş yaptınız.'
     registrations:
-      signed_up: 'Welcome! You have signed up successfully.'
-      signed_up_but_unconfirmed: 'A message with a confirmation link has been sent to your email address. Please open the link to activate your account.'
-      signed_up_but_inactive: 'You have signed up successfully. However, we could not sign you in because your account is not yet activated.'
-      signed_up_but_locked: 'You have signed up successfully. However, we could not sign you in because your account is locked.'
-      updated: 'You updated your account successfully.'
-      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
-      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+      signed_up: 'Başarıyla kayıt oldunuz. Eğer etkinleştirildiyse, bir onay emaili gönderilecek.'
+      updated: 'Hesabınızı başarıyla güncellediniz.'
+      destroyed: 'Güle güle! Hesabınız başarıyla iptal edildi. Umarız tekrar görüşürüz.'
     unlocks:
-      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
-      unlocked: 'Your account has been unlocked successfully. Please sign in to continue.'
-      send_paranoid_instructions: 'If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.'
-    omniauth_callbacks:
-      success: 'Successfully authorized from %{kind} account.'
-      failure: 'Could not authorize you from %{kind} because "%{reason}".'
+      send_instructions: 'Birkaç dakika içinde emailinize hesabınızın kilidini nasıl açacağınız konusunda talimatlar gönderilecek.'
+      unlocked: 'Hesabınızın kilidi başarıyla çözüldü. Şimdi giriş yaptınız.'
     mailer:
       confirmation_instructions:
-        subject: 'Confirmation instructions'
+        subject: 'Onaylama talimatları'
       reset_password_instructions:
-        subject: 'Reset password instructions'
+        subject: 'Şifre sıfırlama talimatları'
       unlock_instructions:
-        subject: 'Unlock Instructions'
+        subject: 'Kilit açma talimatları'

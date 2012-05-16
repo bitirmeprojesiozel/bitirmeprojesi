@@ -2,7 +2,7 @@
 
   <div id="page" align="center" style="margin-right: 120px;">
 
-<%= form_for(resource, :as => resource_name, :url => new_user_session_path) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
     <div><%= f.label "İsim-Soyisim" %><br />
@@ -17,8 +17,8 @@
   <div><%= f.label "Şifre Tekrarı" %><br />
   <%= f.password_field :password_confirmation %></div><br>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+  <div><%= f.submit "Kayıt Ol" %></div>
+<% end %>                   <br>
 
 <%= render "links" %>
 

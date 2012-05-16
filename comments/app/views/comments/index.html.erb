@@ -59,7 +59,7 @@
 
 
 
-            <% @comments.reverse.each do |f| %>
+            <% @comments.each do |f| %>
                 <% TakenLecture.all.each do |t| %>
                     <% if t.user_id==current_user.id and t.tag_id==f.tag_id and f.hiding == true  %>
 
@@ -92,5 +92,7 @@
       </td>
     </tr>
   </table>
+  <div align='right' style="margin-right: 80px; margin-top: 10px; margin-bottom: -10px;"><%= will_paginate :next_label => 'İleri &#8680;', :previous_label => '&#8678; Geri' %></div>
   <hr>
+
 </div>

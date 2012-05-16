@@ -5,14 +5,15 @@ class CommentsController < ApplicationController
   before_filter :authenticate_user!
   def index
     @messages = Type.all
-       @comments = Comment.all
+      # @comments = Comment.all
 
      if params[:id] != nil
 
       @translate= translate
       redirect_to comments_path
       end
-     # @comments = Comment.paginate :per_page => 5, :page => params[:page]
+      @comments = Comment.paginate :per_page => 5, :page => params[:page], :order => "created_at DESC"
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -56,6 +57,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new
     @comment.message = params[:message]
+    @comment.translating = params[:translating]
     @comment.tag_id = params[:tag_id]
     @comment.type_id = params[:type_id]
     @comment.user_id=current_user.id
@@ -79,6 +81,7 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     @comment.message = params[:message]
+    @comment.translating = params[:translating]
     @comment.tag_id = params[:tag_id]
     @comment.type_id = params[:type_id]
     @comment.user_id=current_user.id
